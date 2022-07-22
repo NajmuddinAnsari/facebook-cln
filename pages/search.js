@@ -1,9 +1,10 @@
 import React from 'react'
+import SearchedHeader from '../components/SearchedHeader'
 
 function search() {
     return (
         <div>
-            <h1>searched result</h1>
+            <SearchedHeader />
         </div>
     )
 }
