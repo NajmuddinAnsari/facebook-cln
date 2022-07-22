@@ -9,21 +9,22 @@ function Body() {
         event.preventDefault();
         const enteredInput = inputRef.current.value;
         console.log(enteredInput);
-        router.push('/search');
-        if (!enteredInput) {
+        if (enteredInput.trim().length === 0) {
             return;
         }
+        router.push(`/search?term=${enteredInput.trim()}`);
 
     }
     return (
         <form onSubmit={formHandler} className='flex flex-col items-center flex-grow  mt-5'>
             <img src="/google.jpg" alt="goole-img" className='h-48 w-auto' />
             <div className='flex   w-full
-             border max-w-sm  md:max-w-md lg:max-w-3xl   border-gray-100 ml-3 rounded-full p-5
-            hover:shadow-lg focus-within:lg '>
-                <SearchIcon className='h-9 w-9 text-gray-500' />
+             border max-w-sm  md:max-w-md lg:max-w-3xl   border-gray-100 ml-3 rounded-full p-3
+            hover:shadow-lg focus-within:lg ring-1
+            ring-gray-300'>
+                <SearchIcon className='h-7 w-7 text-gray-700' />
                 <input type="text " ref={inputRef} className='border-gray-300  outline-none flex-grow ' />
-                <MicrophoneIcon className='h-9 w-9 text-gray-500 ml-auto' />
+                <MicrophoneIcon className='h-7 w-7 text-gray-700 ml-auto' />
             </div>
             <div className='flex gap-5 mt-5'>
                 <button className='btn'>I'm Feeling Lucky</button>
