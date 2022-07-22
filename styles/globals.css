@@ -5,6 +5,10 @@
 
 @layer components {
     .btn {
-        @apply bg-[#f8f9fa] text-red-500
+        @apply  p-2 bg-[#f8fafc] hover:ring-1 hover:ring-gray-200 hover:rounded-sm hover:shadow-lg text-gray-500
     }
+
+    /* .link {
+        @apply hover: underline
+    } */
 }

@@ -46,13 +46,13 @@ function Header() {
         <header className='flex justify-between p-4 text-gray-600 items-center' >
             {/* {left} */}
             <div className='flex gap-5'>
-                <p><Link href={'#'} >About</Link></p>
-                <p><Link href={'#'} >Store</Link></p>
+                <p className='link'><Link href={'#'} >About</Link></p>
+                <p className='link'><Link href={'#'} >Store</Link></p>
             </div>
             {/* {right} */}
             <div className='flex gap-5 items-center'>
-                <p><Link href={'#'} >Gmail</Link></p>
-                <p><Link href={'#'} >Images</Link></p>
+                <p className='link'><Link href={'#'} >Gmail</Link></p>
+                <p className='link'><Link href={'#'} >Images</Link></p>
 
                 <ViewGridIcon className="h-10 w-10 text-gray-500 hover:bg-gray-100 rounded-full cursor-pointer p-1" />
                 {user.login && <img src={user.url} alt="profile-pic " className='h-9 rounded-full cursor-pointer transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-110  duration-300 ' />}

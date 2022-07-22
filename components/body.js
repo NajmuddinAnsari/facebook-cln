@@ -21,12 +21,14 @@ function Body() {
             <div className='flex   w-full
              border max-w-sm  md:max-w-md lg:max-w-3xl   border-gray-100 ml-3 rounded-full p-5
             hover:shadow-lg focus-within:lg '>
-                <SearchIcon className='h-10 w-10 text-gray-500' />
+                <SearchIcon className='h-9 w-9 text-gray-500' />
                 <input type="text " ref={inputRef} className='border-gray-300  outline-none flex-grow ' />
-                <MicrophoneIcon className='h-10 w-10 text-gray-500 ml-auto' />
+                <MicrophoneIcon className='h-9 w-9 text-gray-500 ml-auto' />
             </div>
-            {/* <button className='btn'>Google Search</button>
-            <button className='btn'>I'm Feeling Lucky</button> */}
+            <div className='flex gap-5 mt-5'>
+                <button className='btn'>I'm Feeling Lucky</button>
+                <button className='btn'>Google Search</button>
+            </div>
         </form>
     )
 }
