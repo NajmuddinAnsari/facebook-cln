@@ -56,7 +56,7 @@ function Header() {
 
                 <ViewGridIcon className="h-10 w-10 text-gray-500 hover:bg-gray-100 rounded-full cursor-pointer p-1" />
                 {user.login && <img src={user.url} alt="profile-pic " className='h-9 rounded-full cursor-pointer transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-110  duration-300 ' />}
-                {!user.login && <button onClick={loginUser} className='border p-2 rounded-full transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-110  duration-300'>LogIn</button>}
+                {!user.login && <button onClick={loginUser} className='border p-1 rounded-md transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-110  duration-300 bg-blue-500 text-white w-14'>LogIn</button>}
             </div>
 
         </header>

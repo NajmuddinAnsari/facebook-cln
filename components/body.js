@@ -2,17 +2,22 @@ import React, { useRef } from 'react'
 import { MicrophoneIcon, SearchIcon, UserGroupIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import { useRouter } from 'next/router';
+import { loginActions } from '../store';
+import { useDispatch } from 'react-redux';
 function Body() {
+    const dispatch = useDispatch();
     const inputRef = useRef();
     const router = useRouter();
     function formHandler(event) {
         event.preventDefault();
-        const enteredInput = inputRef.current.value;
-        console.log(enteredInput);
-        if (enteredInput.trim().length === 0) {
+        const term = inputRef.current.value;
+        
+        if (term.trim().length === 0) {
             return;
         }
-        router.push(`/search?term=${enteredInput.trim()}`);
+        // router.push(`/search?term=${term.trim()}`);  first step
+        router.push(`/search?term=${term.trim()}&searchType=`)
+        dispatch(loginActions.Login(term))
 
     }
     return (

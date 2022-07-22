@@ -9,11 +9,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 const loginSlice = createSlice({
     name: 'login',
-    initialState: { isLogedIn: false, profilePic: null },
+    initialState: { isLogedIn: false, profilePic: null,searched:null },
     reducers: {
         Login(state, action) {
             state.isLogedIn = true;
-            state.profilePic = `${action.payload}`
+            state.profilePic = `${action.payload}`;
+            state.searched=action.payload
         }
     }
 })
