@@ -1,7 +1,9 @@
 import Head from 'next/head'
+import { useState } from 'react'
 import Body from '../components/body'
 import Header from '../components/Header'
 export default function Home() {
+  
   return (
     <div >
       <Head>
@@ -13,7 +15,6 @@ export default function Home() {
       <Header />
 
       <Body />
-
 
 
     </div>
