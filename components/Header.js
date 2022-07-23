@@ -54,7 +54,11 @@ function Header() {
                 <p className='link'><Link href={'#'} >Gmail</Link></p>
                 <p className='link'><Link href={'#'} >Images</Link></p>
 
-                <ViewGridIcon className="h-10 w-10 text-gray-500 hover:bg-gray-100 rounded-full cursor-pointer p-1" />
+                {/* <ViewGridIcon className="h-10 w-10 text-gray-500 hover:bg-gray-100 rounded-full cursor-pointer p-1" /> */}
+
+                <svg class="gb_Ue h-6" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
+
+
                 {user.login && <img src={user.url} alt="profile-pic " className='h-9 rounded-full cursor-pointer transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-110  duration-300 ' />}
                 {!user.login && <button onClick={loginUser} className='border p-1 rounded-md transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-110  duration-300 bg-blue-500 text-white w-14'>LogIn</button>}
             </div>
