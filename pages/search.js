@@ -22,6 +22,7 @@ function search({ searchedData }) {
 export async function getServerSideProps(context) {
     const modkData = false;
     const data = modkData ? Response : await fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyC40mTczTaX0aqUN7-p1ceA5BFa73JDjjk&cx=a83a602a38c9f354b&q=${context.query.term}${context.query.searchType && "&searchType=image"}`).then((response) => response.json());
+    console.log(data);
     return {
         props: {
             searchedData: data

@@ -8,6 +8,8 @@ import { useRouter } from 'next/router'
 import SearchOptions from './SearchOptions'
 function SearchedHeader() {
     const url = useSelector((state) => state.login.profilePic);
+    console.log("file: SearchedHeader.js ~ line 11 ~ SearchedHeader ~ url", url);
+    
     const router = useRouter();
     const searchedKey = useSelector((state) => state.login.searched)
     console.log("file: SearchedHeader.js ~ line 10 ~ SearchedHeader ~ searchedKey", searchedKey);

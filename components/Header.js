@@ -13,6 +13,7 @@ function Header() {
     const user = useSelector((state) => {
         const userInfo = { login: state.login.isLogedIn, url: state.login.profilePic }
         return userInfo;
+        console.log("file: Header.js ~ line 16 ~ user ~ userInfo", userInfo);
     });
     const dispatch = useDispatch();
 
@@ -25,6 +26,7 @@ function Header() {
                 const token = credential.accessToken;
                 // The signed-in user info.
                 const user = result.user;
+                console.log(user);
                 console.log(user.photoURL);
                 // url = user.photoURL;
 
