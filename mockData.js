@@ -1,4 +1,4 @@
-export default {
+const mockData = {
     "kind": "customsearch#search",
     "url": {
         "type": "application/json",
@@ -575,3 +575,4 @@ export default {
         }
     ]
 }
+export default mockData;

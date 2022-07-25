@@ -3,9 +3,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react'
 import SearchedHeader from '../components/SearchedHeader'
+import SearchImage from '../components/SearchImage';
 import SearchResults from '../components/SearchResults';
-import Response from '../Response';
-
+import mockData from '../mockData';
 function search({ searchedData }) {
     // console.log(searchedData);
     const router = useRouter();
@@ -14,15 +14,24 @@ function search({ searchedData }) {
             <Head>
                 <title>{router.query.term}-Search-Page</title>
             </Head>
+            {/* {header} */}
             <SearchedHeader />
-            <SearchResults results={searchedData} />
+            {router.query.searchType === 'image' ? (
+                <SearchImage results={ searchedData} />
+            ) : (
+                <SearchResults results={searchedData} />
+
+            )}
+            {/* {web search} */}
+
         </div>
     )
 }
 export async function getServerSideProps(context) {
-    const modkData = false;
-    const data = modkData ? Response : await fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyC40mTczTaX0aqUN7-p1ceA5BFa73JDjjk&cx=a83a602a38c9f354b&q=${context.query.term}${context.query.searchType && "&searchType=image"}`).then((response) => response.json());
-    console.log(data);
+    const boolean = true;
+    const startIndex = context.query.start || "1";
+    const data = boolean ? mockData : await fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyC40mTczTaX0aqUN7-p1ceA5BFa73JDjjk&cx=a83a602a38c9f354b&q=${context.query.term}${context.query.searchType && "&searchType=image "}&start=${startIndex}`).then((response) => response.json());
+    // console.log(data);
     return {
         props: {
             searchedData: data
