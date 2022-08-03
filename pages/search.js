@@ -17,7 +17,7 @@ function search({ searchedData }) {
             {/* {header} */}
             <SearchedHeader />
             {router.query.searchType === 'image' ? (
-                <SearchImage results={ searchedData} />
+                <SearchImage results={searchedData} />
             ) : (
                 <SearchResults results={searchedData} />
 
@@ -28,7 +28,7 @@ function search({ searchedData }) {
     )
 }
 export async function getServerSideProps(context) {
-    const boolean = true;
+    const boolean = false;
     const startIndex = context.query.start || "1";
     const data = boolean ? mockData : await fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyC40mTczTaX0aqUN7-p1ceA5BFa73JDjjk&cx=a83a602a38c9f354b&q=${context.query.term}${context.query.searchType && "&searchType=image "}&start=${startIndex}`).then((response) => response.json());
     // console.log(data);

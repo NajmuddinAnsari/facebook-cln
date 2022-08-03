@@ -48,8 +48,8 @@ function Header() {
         <header className='flex justify-between p-4 text-gray-600 items-center' >
             {/* {left} */}
             <div className='flex gap-5'>
-                <p className='link'><Link href={'#'} >About</Link></p>
-                <p className='link'><Link href={'#'} >Store</Link></p>
+                <p className='link'><Link href={'https://about.google/l'} >About</Link></p>
+                <p className='link'><Link href={'https://store.google.com/'} >Store</Link></p>
             </div>
             {/* {right} */}
             <div className='flex gap-5 items-center'>
